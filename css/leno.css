@@ -306,14 +306,79 @@ nav:hover .links {
     margin-bottom: 0;
 }
 
-
-
-
 /* end portfolio */
+
+/* start about */
+
+.about {
+    padding: var(--section-padding);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 100px;
+}
+
+.about-image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+
+.about-image::after {
+    content: "";
+    width: 100px;
+    height: calc(100% + 80px);
+    background-color: #ebeced;
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+
+.about-image::before {
+    top: -40px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+}
+
+.about-text {
+    min-width: calc(100% - 500px);
+}
+
+.about-text p:first-child {
+    font-weight: var(--font-weight-Extra-bold);
+    line-height: calc(var(--paragraph-line-height) + 0.4);
+    margin-bottom: 50px;
+}
+
+.about-text hr {
+    width: 60%;
+    background-color: var(--main-color);
+    height: 0.5px;
+    border: 0;
+    margin: 0;
+}
+
+.about-text p:last-child {
+    color: #777;
+    line-height: calc(var(--paragraph-line-height) + 0.4);
+}
+/* end about */
 
 /* start Responsive Design */
 
 @media (max-width: 996px){
+    .container {
+        width: 100%;
+    }
     .feature .container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -326,10 +391,29 @@ nav:hover .links {
     .portfolio__content {
         grid-template-columns: repeat(2, 1fr);
     }
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image {
+        margin: 0 auto 60px;
+    }
+    .about-image::before,
+    .about-image::after {
+        display: none;
+    }
+    .about-text {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 
 @media (max-width: 776px ){
+    .container {
+        width: 100%;
+    }
+
     .feature .container {
         grid-template-columns: 1fr;
     }
@@ -359,17 +443,14 @@ nav:hover .links {
     .card .card-content p {
         line-height: 1.2;
     }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
+    .about-text hr {
+        margin-bottom: 20px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 996px){
     .container {
-        width: 970px;
+        width: 950px;
     }
 }
 
