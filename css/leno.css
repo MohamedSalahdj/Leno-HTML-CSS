@@ -1,6 +1,17 @@
 :root {
     --main-color: #10cab7;
 
+    --paragraph-line-height: 1.8;
+    --second-paragraph-line-height: 1.6;
+
+    --font-size-20: 20px;
+    --font-size-25 : 25px;
+    --font-size-35: 35px;
+    --font-size-50: 50px;
+
+    --font-weight-bold: 700;
+    --font-weight-Extra-bold: 800;
+
     --transition-timing: 0.3s;
 }
 
@@ -121,3 +132,32 @@ nav:hover .links {
 }
 
 /* end header */
+
+/* start landing */
+
+.landing {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-text {
+    text-align: center;
+    width: 320px;
+}
+
+.landing-text h1 {
+    color: var(--main-color);
+    margin: 0;
+    font-size: var(--font-size-50);
+    font-weight: var(--font-weight-bold)
+}
+
+.landing-text p {
+    font-size: var(--font-size-20);
+    line-height: var(--paragraph-line-height);
+}
+/* end landing */
